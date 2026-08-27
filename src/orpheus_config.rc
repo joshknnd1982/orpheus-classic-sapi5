@@ -1,0 +1,55 @@
+#include <windows.h>
+#include "config_resource.h"
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+IDD_CONFIG DIALOGEX 0, 0, 260, 262
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX
+CAPTION "Orpheus Classic Configuration"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&Voice (language):", -1, 7, 9, 110, 8
+    COMBOBOX        IDC_LANGUAGE, 122, 7, 130, 120, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    LTEXT           "&Rate (40 to 700):", -1, 7, 27, 110, 8
+    EDITTEXT        IDC_RATE, 122, 25, 60, 12, ES_NUMBER | ES_AUTOHSCROLL
+    CONTROL         "", IDC_RATE_SPIN, "msctls_updown32", UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 182, 25, 11, 12
+
+    LTEXT           "&Pitch (50 to 500):", -1, 7, 45, 110, 8
+    EDITTEXT        IDC_PITCH, 122, 43, 60, 12, ES_NUMBER | ES_AUTOHSCROLL
+    CONTROL         "", IDC_PITCH_SPIN, "msctls_updown32", UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 182, 43, 11, 12
+
+    LTEXT           "Vo&lume (0 to 100):", -1, 7, 63, 110, 8
+    EDITTEXT        IDC_VOLUME, 122, 61, 60, 12, ES_NUMBER | ES_AUTOHSCROLL
+    CONTROL         "", IDC_VOLUME_SPIN, "msctls_updown32", UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 182, 61, 11, 12
+
+    LTEXT           "&Intonation (0 to 100):", -1, 7, 81, 110, 8
+    EDITTEXT        IDC_INTONATION, 122, 79, 60, 12, ES_NUMBER | ES_AUTOHSCROLL
+    CONTROL         "", IDC_INTONATION_SPIN, "msctls_updown32", UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 182, 79, 11, 12
+
+    LTEXT           "Voicin&g (0 to 100):", -1, 7, 99, 110, 8
+    EDITTEXT        IDC_VOICING, 122, 97, 60, 12, ES_NUMBER | ES_AUTOHSCROLL
+    CONTROL         "", IDC_VOICING_SPIN, "msctls_updown32", UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 182, 97, 11, 12
+
+    LTEXT           "Voice s&ource:", -1, 7, 117, 110, 8
+    COMBOBOX        IDC_SOURCE, 122, 115, 130, 60, CBS_DROPDOWNLIST | WS_TABSTOP
+
+    LTEXT           "&Word pause (0 to 1000 ms):", -1, 7, 135, 110, 8
+    EDITTEXT        IDC_WORDPAUSE, 122, 133, 60, 12, ES_NUMBER | ES_AUTOHSCROLL
+    CONTROL         "", IDC_WORDPAUSE_SPIN, "msctls_updown32", UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 182, 133, 11, 12
+
+    LTEXT           "P&hrase pause (0 to 2000 ms):", -1, 7, 153, 110, 8
+    EDITTEXT        IDC_PHRASEPAUSE, 122, 151, 60, 12, ES_NUMBER | ES_AUTOHSCROLL
+    CONTROL         "", IDC_PHRASEPAUSE_SPIN, "msctls_updown32", UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 182, 151, 11, 12
+
+    AUTOCHECKBOX    "Enable &debug logging", IDC_LOGGING, 7, 171, 245, 10
+
+    LTEXT           "&Test text:", -1, 7, 189, 110, 8
+    EDITTEXT        IDC_TESTTEXT, 122, 187, 130, 12, ES_AUTOHSCROLL
+
+    PUSHBUTTON      "&Speak test", IDC_TEST, 7, 207, 70, 14
+    PUSHBUTTON      "Restore de&faults", IDC_DEFAULTS, 82, 207, 80, 14
+    DEFPUSHBUTTON   "Close", IDOK, 202, 207, 50, 14
+
+    LTEXT           "Settings are saved automatically and apply to the Orpheus Custom Voice immediately, including while a screen reader is speaking.", IDC_INFO, 7, 228, 245, 26
+END

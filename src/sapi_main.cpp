@@ -1,0 +1,113 @@
+#include "orpheus_client.h" // must come first: winsock2.h before windows.h
+
+#include <new>
+#include <sapi.h>
+#include "com.hpp"
+#include "registry.hpp"
+#include "ISpTTSEngineImpl.hpp"
+#include "IEnumSpObjectTokensImpl.hpp"
+#include "debug_log.h"
+
+namespace {
+
+HINSTANCE g_dll_handle = nullptr;
+Orpheus::com::class_object_factory g_cls_obj_factory;
+
+const std::wstring token_enums_path = L"Software\\Microsoft\\Speech\\Voices\\TokenEnums";
+
+[[nodiscard]] std::wstring clsid_to_string(const GUID& clsid)
+{
+    wchar_t buf[64];
+    StringFromGUID2(clsid, buf, 64);
+    return std::wstring(buf);
+}
+
+void register_token_enumerator()
+{
+    using namespace Orpheus::sapi;
+    using namespace Orpheus::registry;
+
+    const std::wstring clsid_str = clsid_to_string(__uuidof(IEnumSpObjectTokensImpl));
+
+    key enums_key(HKEY_LOCAL_MACHINE, token_enums_path, KEY_CREATE_SUB_KEY | KEY_SET_VALUE, true);
+    key enum_key(enums_key, L"OrpheusClassic", KEY_SET_VALUE, true);
+
+    enum_key.set(L"Orpheus Classic Voices");
+    enum_key.set(L"CLSID", clsid_str);
+}
+
+void unregister_token_enumerator() noexcept
+{
+    using namespace Orpheus::registry;
+
+    try {
+        key enums_key(HKEY_LOCAL_MACHINE, token_enums_path, KEY_ALL_ACCESS);
+        enums_key.delete_subkey(L"OrpheusClassic");
+    }
+    catch (...) {
+    }
+}
+}
+
+BOOL APIENTRY DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID /*lpReserved*/)
+{
+    if (dwReason == DLL_PROCESS_ATTACH) {
+        g_dll_handle = hInstance;
+        DisableThreadLibraryCalls(hInstance);
+
+        try {
+            g_cls_obj_factory.register_class<Orpheus::sapi::IEnumSpObjectTokensImpl>();
+            g_cls_obj_factory.register_class<Orpheus::sapi::ISpTTSEngineImpl>();
+        }
+        catch (...) {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+
+STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, void** ppv)
+{
+    return g_cls_obj_factory.create(rclsid, riid, ppv);
+}
+
+STDAPI DllCanUnloadNow()
+{
+    return Orpheus::com::object_counter::is_zero() ? S_OK : S_FALSE;
+}
+
+STDAPI DllRegisterServer()
+{
+    try {
+        Orpheus::com::class_registrar r(g_dll_handle);
+        r.register_class<Orpheus::sapi::IEnumSpObjectTokensImpl>();
+        r.register_class<Orpheus::sapi::ISpTTSEngineImpl>();
+        register_token_enumerator();
+        ORPHEUS_LOG("DllRegisterServer: registered");
+        return S_OK;
+    }
+    catch (const std::bad_alloc&) {
+        return E_OUTOFMEMORY;
+    }
+    catch (...) {
+        return E_UNEXPECTED;
+    }
+}
+
+STDAPI DllUnregisterServer()
+{
+    try {
+        unregister_token_enumerator();
+        Orpheus::com::class_registrar r(g_dll_handle);
+        r.unregister_class<Orpheus::sapi::IEnumSpObjectTokensImpl>();
+        r.unregister_class<Orpheus::sapi::ISpTTSEngineImpl>();
+        ORPHEUS_LOG("DllUnregisterServer: unregistered");
+        return S_OK;
+    }
+    catch (const std::bad_alloc&) {
+        return E_OUTOFMEMORY;
+    }
+    catch (...) {
+        return E_UNEXPECTED;
+    }
+}
