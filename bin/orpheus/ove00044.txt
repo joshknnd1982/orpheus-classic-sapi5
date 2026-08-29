@@ -1,0 +1,176 @@
+Orpheus Speech synthesiser Version History
+==========================================
+
+
+	Version 1.01
+	============
+	1.01 released 30/06/98
+
+
+	Version	1.02		
+	============
+
+	FIX: Reduce clicks on a mute.
+
+	FIX: Ensure Sound Effects list is emptied on a mute.
+
+	FIX: Uninstall failed to delete SFX files if Orpheus loaded into memory.
+
+	FIX: Include a Window name and class "Orpheus" enabling uninstall to detect if Orpheus is present.
+
+	FIX: Vowels sounded not always fully voiced.  Corrected "voicing offset" table values.
+
+	CHANGE: Design change to synthesiser - stop sudden drops in formant amplitude causing blips.
+
+	FIX: DolABF bug causing Orpheus eventually to stop after an hour or two of continuous use.
+
+	1.02 released 21/7/98
+
+
+	Version	1.03
+	============
+
+	CHANGE: Removed the average DC level from stored voiced pulse and during "F0" processing.
+
+	NEW: Create demonstration version.
+
+	NEW: Added network capability.
+
+	FIX: I D Window not being removed; call DestroyWindow on DLL process detatch.
+
+	CHANGE: Ensure DEMO version cannot use a released language and vice-versa by....  Also ensure that
+	DEMO language files are named D00001.tts, D00044.tts and  so on.
+
+	CHANGE: Remove leading and trailing spaces from default (english) parameter names.
+
+	CHANGE: Adjust TAB Order of Main Config box to end..... OK, CANCEL, ABOUT.  Ensure that "child" dialog
+	boxes are owned by the parent to stop multiple "About" and "Language Load" box possibility.
+
+	FIX - SAM Driver modified to wait for asynchronous speak function to finish when collecting
+	language character set definitions.
+
+	CHANGE: Make Language installation dialog box easier to use. Window two starts on the
+	list box and tabs to Copy then Cancel.  The list box is no longer unselected although the
+	user cannot make selections in it.
+
+	CHANGE: Non linear speed-up algorithm improved.
+
+	NEW: Shortening inter phonetic segment transitions as speed-up occurs improves intelligibility at fast talking rates.
+	Use same non-linear shortening algorithm as for the segment durations themselves.  Results for fast speech
+	presented at C S U N 1999.
+
+	NEW: Include Mixer (Win 95 only). Control the mixer via a tick box in the Orpheus control panel. This controls
+	a flag in the registry under:
+		HKEY_CURRENT_USER\Software\Dolphin\Mixer\Mixer OnOff.
+
+	FIX: Write larger chunks to the sound output controller, DolABF, to cure the "TH-THis" problem sometimes heard
+	in the first phoneme in a phrase.
+
+	CHANGE: DolABF version 1.04 released. New Dolmix version (Beta?) 1.03 released.
+
+	FIX: Correct timing of sfx.
+
+	CHANGE:	Increase the Orpheus volume (by a factor of 2.4) by clipping rather than wrapping-round the ouput.
+	Gives distortion rather than clicking if a sample excedes short integer range.
+
+	CHANGE: Improve the operation of the Grammar (operator) processing.
+
+	FIX: Orpheus hanging or slow reading when no mutes issued (e.g. reading installation license agreement).  Orpheus
+	didn't always set the amount of silence to be played at the end of a phrase to "run-down" the element-to-element
+	interpolation. Now set to 20ms of silence.
+
+	CHANGE: Speed improvements to filters and synthesis engine. Orpheus takes 12s cpu to speak 88s of speech on a
+	200MHz Pentium II, so is about 7.3* real time or takes ~13% cpu usage.
+
+	FIX: Force reset of the voicing generator if returning from fully unvoiced state.
+
+	CHANGE: Implemented the mixing of the glottal area function for unvoiced with the time-varying
+	voicing component as per the original specification for the parallel formant synthesiser.
+
+	FIX: DOLABF accepted an index marker even though the data was rejected (buffers full) causing indexing to
+	temporarily go wrong.
+
+	1.03 released  5/01/99
+
+
+	Version	1.04
+	============
+
+	FIX: Correction to network operation.
+
+	FIX: Clearing of a wrong registry key handle.  Could crash if already cleared.
+
+	1.04 released 20/04/99
+
+
+	Version 1.05
+	============
+
+	NEW: Translatable control panel.
+
+	FIX: Bug in Timer setting and use in Orpheus and the SAM driver(s).
+
+	FIX: Safety check modification added to DolMix to fix possible crashes with "genuine" non-PnP soundcard drivers.
+
+	FIX: Fix Left right mix-up in balance control in DolABF.
+
+	NEW: Include this version history file in distribution.
+
+	FIX: Incorrect procssing of WM_ENDSESSION message caused mixer to abort even though end session is being cancelled.
+
+	FIX: Mixer start up and restart code. If the mixer failed to open any devices first time, it opened 11kHz when
+	it retried, causing a variety of problems.  Recoded Init_Intercept() to separate hook installation from getting
+	wave-channels allocated and ensure same processes used on each attempt to start.
+
+	CHANGE:	Remove wraparound test before outputing mixer samples;  they have been divided by 2, so don't need it.
+
+	FIX: Problems in DolABF if the sound driver "event" processing timed-out resulting in an operating but silent
+	Orpheus, or the shut-down to hang.  Redid DolABF, with one thread only, using a callback function rather than
+	event processing; simpler and more efficient.  (A fixed original version is retained, e.g. for Tech support).
+
+	FIX: Bug in Orpheus allowed a released orpheus to read a "renamed" demo language file.
+
+	FIX: Stop two copies of orpheus running.
+
+	FIX: Minor improvements to stop Boundschecker complaining. Code a failure to start the mixer so it doesn't remove
+	invalid handle.  Also in the prompt loading code, don't call GetPrivateProfileString for unused (null) prompt
+	list entries.
+
+	FIX: Correct selection of unstressed shortening factors for word-medial and final-vocalics - was reversed.
+
+	CHANGE: Numerous Speed improvements, e.g. DOLABF 3 times faster, TTS_Open call does less.  Speed improvements in
+	the synthesiser and symbol rule matcher.
+
+	FIX: Bug in hypermode removed adjectives rather than function words!  Nobody noticed till now!
+
+	NEW: Add work around for the Win 2000 and 98 SE stutter problem.  Give another option in the control panel to
+	choose between Reset or a Reset, Close, Open sequences when muting.  The latter is quieter, doesn't show up
+	the stutter problem but is slower.  It akso has a risk that a re-open doesn't work, so recovery is added.
+
+
+	Version 1.06
+	============
+
+	NEW:	Increase execution priority of A3S.dll. This should reduce the stuttering recently observed on slower
+	machines.  DolABF is also modified to return to Windows while sending blocks of data to the sound system, as the
+	high priority could mean the loop was too tight for the sound system itself to break in causing a gap at the
+	begining of speech.
+
+	NEW:	Close on mute extended to close the audio while Orpheus is not speaking.  This will allow the occasional
+	beep to be heard without using the mixer and will reduce problems associated with SAM start up with multiple
+	software synthesisers.
+
+	CHANGE:	Always use WAVE_MAPPER as the sound output device (unless the Orpheus registry entry is edited).
+	This should make Orpheus' operation less dependent on particular sound drivers and be totally consistent across
+	platforms - in theory.  ALso fix the bug in the DolABF indexing system which assumed the wrong format of position
+	information if WAVE_MAPPER is the driver.
+
+	FIX:	Several bugs in the the Windows 95 mixer are fixed.  Some were to do with indexing, DolMIx should
+	be accurate to within +/-1/10 second of the speech.  A couple of others were to do with system behaviour and 
+	could have had inpredictable effects (a couple of odd crashes had been reported).
+
+	CHANGE:	In Orpheus, reduce the start and stop silence periods to help Orpheus feel more responsive.
+
+	CHANGE:	Installation does not ask for a reboot if installing Orpheus alone.
+
+	FIX:	Occasional mispronunciation caused by sometimes using wrong (last) language's i/p character set.

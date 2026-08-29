@@ -1,0 +1,19 @@
+Top of document
+Software License
+
+The software includes computer software, associated media, Braille, cassette or print materials and any electronic documentation. The software is licensed and not sold.  The software is protected by copyright laws, international copyright treaties and intellectual property laws.  The software is licensed for a single user only unless a site license has been purchased where the number of concurrent users is restricted to that purchased.
+
+(c) 1998-2001 Dolphin Oceanic Limited.  All rights reserved.
+
+Notice
+
+Orpheus is a trademark of Dolphin Oceanic Ltd.  Windows and Windows NT are registered trademarks of Microsoft Corporation.  All other products are trademarks or registered trademarks of their respective owners.
+
+Warranty & Disclaimer
+
+Dolphin warrants that the media on which the software is distributed are free from defects and will replace defective media at no charge.  Dolphin gives no warranties with respect to any bugs or errors in the software or to its fitness for a particular purpose.  Any liability, consequential or otherwise, will be limited to the amount paid for the software.  Please inform us of any bugs you may find and we will endeavor to rectify them.
+
+N.B. 
+*   You should save your work and make regular backups, particularly before installing new software or hardware.  
+*   Due to the many possible hardware configurations and inherently complex nature of software, errors do occur.
+End of document

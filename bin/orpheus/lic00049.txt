@@ -1,0 +1,26 @@
+Anfang des Dokuments
+SOFTWAREPRODUKTLIZENZ
+Dieses SOFTWAREPRODUKT besteht aus Computerprogrammen, den Medien, auf denen
+es geliefert wird, Brailleausdrucken, Kassetten und der Dokumentation in
+elektronischer Form. Das SOFTWAREPRODUKT wird sowohl durch das Urheberrecht
+und internationale Urheberrechtsbestimmungen geschützt, als auch durch andere
+Gesetze und Verträge über geistiges Eigentum. Das SOFTWAREPRODUKT wird nicht
+verkauft, sondern lizenziert. Dieses Softwareprodukt ist für einen Benutzer
+oder für einen Rechner lizenziert. Bei einer Rechnerlizenz ist die Anzahl der
+Benutzer, die dieses SOFTWAREPRODUKT auf diesem Rechner einsetzen dürfen,
+von der Lizenzvereinbarung abhängig und durch diese begrenzt.
+
+(c) 1998-2001 Dolphin Oceanic Limited.  Alle Rechte vorbehalten.
+
+Hinweis
+Orpheus ist Warenzeichen von Dolphin Oceanic Ltd. Windows and Windows NT sind registrierte Warenzeichen von Microsoft Corporation. Die übrigen Produkte sind Warenzeichen oder registrierte Warenzeichen der jeweiligen Eigentümer.
+
+Garantie und Ausschlußhaftung
+Dolphin garantiert die Fehlerfreiheit der Medien, auf denen die Software ausgeliefert wird. Defekte Medien werden von Dolphin kostenlos ersetzt. Dolphin übernimmt keinerlei Garantie für die Fehlerfreiheit der Software oder ihre Eignung für einen bestimmten Zweck.
+Forderungen an Dolphin sind in ihrer Höhe auf den Kaufpreis begrenzt. Bitte informieren Sie uns über mögliche Fehler in der Software oder über Features, die die Software Ihrer Meinung nach noch erhalten sollte. Wir werden uns bemühen, die Fehler auszubessern und Ihre Vorschläge in zukünftige Programmversionen einfließen zu lassen.
+
+N.B.
+- Speichern Sie Ihre Arbeitsdaten häufig ab und fertigen Sie regelmäßig ein Backup an, bevor Sie neue Software installieren.
+- Wegen der vielen möglichen Hardwarekonfigurationen und der Komplexität heutiger Software sind Fehler nie ganz auszuschließen.
+
+Ende des Dokuments

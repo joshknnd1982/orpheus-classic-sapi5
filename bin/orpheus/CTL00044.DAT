@@ -1,0 +1,98 @@
+
+[PRE-INSTALL]
+PRIORITY 2
+ORDER 4
+; Dolphin Installation Program
+; Control script for Orpheus Software Synthesiser
+
+BETA 0
+PRODUCT_NAME "Orpheus Software Synthesiser"
+PRODUCT_VERSION "1.06"
+PRODUCT_BUILD 18
+PRODUCT_CODE OC3
+DEFAULT_PRODFOLDER $r\Orpheus
+DEFAULT_DOCFOLDER ""
+ALLOW_DOCFOLDER 0
+DEFAULT_STARTFOLDER "Orpheus"
+ALLOW_STARTFOLDER 0
+DEFAULT_STARTUP 0
+ALLOW_STARTUP 0
+LICENSE_DOC Orpheus\LIC00044.TXT
+MIN_DISKSPACE 4096
+MIN_MEMORY 8192
+MIN_CPU 0
+TOTAL_KBYTES 1493
+REGKEY c Orpheus
+WINDOW_CLASS Orpheus
+ALLOWRUNNING 1
+
+[INSTALL]
+MKDIR "$f"
+MKDIR "$f\language"
+MKDIR "$f\docs"
+MKDIR "$f\sam"
+MKDIR "$f\sfx"
+MKDIR "$f\sfx\11kHz"
+MKDIR "$f\sfx\22kHz"
+COPY "insutils\unststub.exe" "$f\uninst.exe"
+COPY "insutils\uninst.exe" "$f\_uninst.exe"
+COPY "ins00044.ini" "$f\ins00044.ini"
+COPY "ins00001.ini" "$f\ins00001.ini"
+COPY "ins00049.ini" "$f\ins00049.ini"
+COPY "ins00031.ini" "$f\ins00031.ini"
+COPY "ins00046.ini" "$f\ins00046.ini"
+COPY "uns00044.ini" "$f\uns00044.ini"
+COPY "uns00001.ini" "$f\uns00001.ini"
+COPY "uns00049.ini" "$f\uns00049.ini"
+COPY "uns00031.ini" "$f\uns00031.ini"
+COPY "uns00046.ini" "$f\uns00046.ini"
+COPY "Orpheus\a3s.dll" "$f\a3s.dll" /b
+COPY "Orpheus\Dolabf.dll" "$f\Dolabf.dll" /b
+COPY "Orpheus\oconfig.exe" "$f\oconfig.exe" /b
+COPY "Orpheus\Dolmix.exe" "$f\Dolmix.exe" /b
+COPY "Orpheus\language\*.*" "$f\language\*.*" /b
+COPY "Orpheus\ORP00044.WRI" "$f\docs\ORP00044.WRI"
+COPY "Orpheus\ORP00001.WRI" "$f\docs\ORP00001.WRI"
+COPY "Orpheus\ORP00049.WRI" "$f\docs\ORP00049.WRI"
+COPY "Orpheus\ORP00031.WRI" "$f\docs\ORP00031.WRI"
+COPY "Orpheus\ORP00046.WRI" "$f\docs\ORP00046.WRI"
+COPY "Orpheus\ORP00044.INI" "$f\ORP00044.INI"
+COPY "Orpheus\ORP00001.INI" "$f\ORP00001.INI"
+COPY "Orpheus\ORP00049.INI" "$f\ORP00049.INI"
+COPY "Orpheus\ORP00031.INI" "$f\ORP00031.INI"
+COPY "Orpheus\ORP00046.INI" "$f\ORP00046.INI"
+COPY "Orpheus\ove00044.txt" "$f\docs\ove00044.txt"
+COPY "Orpheus\ove00001.txt" "$f\docs\ove00001.txt"
+COPY "Orpheus\ove00049.txt" "$f\docs\ove00049.txt"
+COPY "Orpheus\ove00031.txt" "$f\docs\ove00031.txt"
+COPY "Orpheus\ove00046.txt" "$f\docs\ove00046.txt"
+COPY "Orpheus\sam\*.dll" "$f\sam\*.dll" /b
+COPY "Orpheus\sam\*.ini" "$f\sam\*.ini" /b
+COPY "Orpheus\sam\*.txt" "$f\sam\*.txt" /b
+COPY "Orpheus\sfx\11kHz\*.*" "$f\sfx\11kHz\*.*" /b
+COPY "Orpheus\sfx\22kHz\*.*" "$f\sfx\22kHz\*.*" /b
+
+[POST-INSTALL]
+INIFILE $W\WIN.INI Compatibility95 ORPHEUS 0x00000002
+INIFILE $W\WIN.INI Compatibility95 DOLMIX 0x00000002
+INIFILE $W\WIN.INI Compatibility95 OCONFIG 0x00000002
+
+LOG REGISTRYKEY c SOFTWARE\Dolphin
+LOG REGISTRYKEY l SOFTWARE\Dolphin
+LOG _REGTREE c SOFTWARE\Dolphin\Orpheus
+LOG _REGTREE l SOFTWARE\Dolphin\DolMix
+LOG _REGTREE c SOFTWARE\Dolphin\Mixer
+STARTMENU $s "Uninstall Orpheus" "$f\UNINST.EXE" ""
+STARTMENU $s "Orpheus Documentation" "$f\docs\ORP00044.WRI" ""
+STARTMENU $s "Version Readme" "$f\docs\OVE00044.TXT" ""
+STARTMENU $s "Configure Orpheus" "$f\OConfig.exe" ""
+LOG REGTREE l SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\DolphinOrpheus
+REGISTRY l SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\DolphinOrpheus\DisplayName str "Orpheus Software Synthesiser"
+REGISTRY l SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\DolphinOrpheus\UninstallString str "$f\uninst.exe"
+END
+
+
+
+
+
+

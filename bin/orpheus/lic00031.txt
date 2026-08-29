@@ -1,0 +1,29 @@
+Bovenkant document
+Software Licentie
+
+De software omvat computer software, bijbehorende media, Braille, cassette of zwartdruk materiaal en eventueel elektronische documentatie. De
+software wordt in licentie gegeven en niet verkocht. 
+De software is beschermd door copyright wetten, internationale copyright overeenkomsten en intellectuele eigendomsrechten. 
+De licentie voor de software geldt voor een enkele gebruiker tenzij een site-licentie is aangeschaft, waarbij het aantal gebruikers is bepaald bij de aanschaf.
+
+
+(c) 1998-2001 Dolphin Oceanic Limited. Alle rechten voorbehouden.
+
+Handelsmerken.
+
+HAL, Supernova en SAM zijn handelsmerken van Dolphin Oceanic Ltd.
+Windows en Windows NT zijn geregistreerde handelsmerken van Microsoft Corporation. 
+Alle andere produkten kunnen geregistreerde handelsmerken zijn van derden.
+
+
+Garantie en Aansprakelijkheid
+
+Dolphin garandeert dat de media waarop de software wordt gedistribueerd vrij zijn van defecten en zullen worden vervangen als er defecten zijn opgetreden.
+Dolphin aanvaardt geen aansprakelijkheid met betrekking tot programma- en andere fouten in de software of de werking bij niet standaard toepassingen. Elke mogelijke aansprakelijkheid is beperkt tot het voor het produkt betaalde bedrag.
+We verzoeken u om ons op de hoogte houden van door u gevonden programma-fouten zodat wij kunnen trachten deze op te lossen.
+
+
+Belangrijke opmerking:
+*   We raden u ten zeerste aan om regelmatig een reserve kopie te maken, en in het bijzonder voor installatie van nieuwe software of hardware.
+*   Door de vele mogelijkheden in de computer configuraties en daardoor complexe programmatuur, komen fouten helaas voor.
+Einde document

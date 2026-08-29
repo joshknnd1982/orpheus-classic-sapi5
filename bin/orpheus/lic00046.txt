@@ -1,0 +1,18 @@
+
+Licensvillkor
+
+Licensen omfattar programvara och tillhörande dokumentation i tryckt form, på kassett, i punktskrift eller i elektronisk textform. Programvaran är licensierad till användaren, inte såld. Programmet är licensierat till en enda användare, utom i de fall en särskild fleranvändarlicens har inskaffats från tillverkaren. En fleranvändarlicens får användas av flera användare samtidigt, i ett antal upp till men ej överstigande det antal licenser som ingår i fleranvändarlicensen.
+
+Varning! Detta program och all dokumentation relaterad till programmet är skyddat av svensk och internationell upphovsrättslagstiftning samt internationella konventioner. Otillåten kopiering eller distribution av detta program, delar av programmet eller dess relaterade dokumentation kommer att beivras och kan förutom skadeståndsskyldighet medföra böter eller fängelse i upp till två år.
+
+(c) 1998-2001 Dolphin Computer Access Limited. Med ensamrätt.
+
+Varumärken och rättigheter
+Lunar och Hal är varumärken tillhörande Dolphin Computer Access. Windows och Windows NT är registrerade varumärken tillhörande Microsoft Corporation. Alla övriga varumärken är registrerade varumärken tillhöriga respektive ägare.
+
+Garanti och reservationer
+Dolphin Computer Access garanterar att distributionsmedia levereras i oskadat skick och tillhandahåller kostnadsfritt utbyte av media som har skadats under leverans. Dolphin lämnar inga garantier för eventuella fel i programmet eller för de konsekvenser som sådana fel kan leda till. Dolphin åtar sig inget ersättningsansvar för fel i produkten eller för konsekvenserna av sådana fel. Dolphin är dock tacksam för rapporter om fel i programmet och kommer att vidta nödvändiga åtgärder för att korrigera sådana fel.
+
+Anmärkningar:
+-  Spara dina data ofta och utför regelbunden säkerhetskopiering innan du installerar ny programvara eller maskinvara.
+-  På grund av de stora antal möjliga konfigurationer av maskinvara och operativsystem som kan förekomma, samt på grund av den inneboende komplexiteten hos programvara i allmänhet, kan i vissa lägen fel uppstå vid installation eller användning av denna produkt. 

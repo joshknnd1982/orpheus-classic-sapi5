@@ -5,4 +5,3 @@ build_asan
 output
 test_wavs
 __pycache__
-bin/

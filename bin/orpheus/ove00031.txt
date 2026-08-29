@@ -1,0 +1,134 @@
+Orpheus Spraak-synthesizer Versie Historie
+==========================================
+
+
+        Versie 1.01
+        ===========
+        1.01 uitgebracht 30/06/98
+
+
+        Versie 1.02
+        ===========
+
+        VERBETERD: Aantal klikken bij geen spraak verminderd.
+
+        VERBETERD: Geluidseffect lijst verwijderd bij geen spraak.
+
+        VERBETERD: Installatie verwijderen liet SFX bestanden staan als Orpheus in geheugen is geladen.
+
+        VERBETERD: Window naam en Klasse "Orpheus" opgenomen om bij installatie verwijderen
+                   te onderkennen of Orpheus aanwezig is.
+
+        VERBETERD: Klinkers klonken niet altijd vol. de "voicing offset" tabel gecorrigeerd.
+
+        VERANDERD: Ontwerp van synthesizer - plotseling afvallen van formant amplitude
+                   waardoor onderbrekingen worden tegen gegaan.
+
+        VERBETERD: DolABF probleem waardoor Orpheus na gebruik van 1 tot 2 uur achter
+                   elkaar kon stoppen.
+
+        1.02 uitgebracht 21/7/98
+
+
+        Versie 1.03
+        ===========
+
+        VERANDERD: Gemiddeld DC niveau verwijderd van opgeslagen stempuls en gedurende afwerken van "F0" proces.
+
+        NIEUW: Demonstratie versie aangemaakt.
+
+        NIEUW: Network ondersteuning toegevoegd.
+
+        VERBETERD: I D Window wordt niet verwijderd;call DestroyWindow in DLL proces ontkoppeld.
+
+        VERANDERD: Verzekeren dat DEMO versie een uitgebrachte taal niet kan gebruiken en vice-versa. Ook verzekeren dat de DEMO taalbestanden D00001.tts, D00044.tts enzovoort heten.
+
+        VERANDERD: Verwijderd voorloop- en volgspaties in de standaard (Engelse) parameter namen.
+
+        VERANDERD: TAB volgorde voor Config venster aangepast en eindigt met..... OK, ANNULEREN, INFO. Test of "kind" dialoogvenster behoort bij ouder, om meervoudig laden van "Info" en "Taal laden" vensters te stoppen.
+
+        VERBETERD - SAM stuurprogramma aangepast zodat gewacht wordt op het eindigen van een asynchrone spraakfunctie bij verzamelen van taaltekencode definities.
+
+        VERANDERD: Installatie dialoogvenster voor taal instelling vereenvoudigd. Venster 2 start op de keuzelijst en tabt naar Kopieren daarna Annuleren. De keuzelijst is niet meer "niet geselecteerd", hoewel de gebruiker geen selecties hierin kan maken.
+
+        VERANDERD: Niet-lineaire versneller algorithme verbeterd.
+
+        NIEUW: Inter fonetische segment transities verkort omdat versnelling de verstaanbaarheid bij snelle spraak verbeterd. Gebruik dezelfde niet-lineaire afkortings algorithme als bij de segment duur zelf. Resultaat snelle spraak gepresenteerd op de C S U N 1999.
+
+        NIEUW: Toegevoegd Mixer (alleen Win 95). Instelling mixer via een aankruisvak in het instellingen paneel van Orpheus. Hiermee wordt de vlag in het register aangepast:
+                HKEY_CURRENT_USER\Software\Dolphin\Mixer\Mixer OnOff.
+
+        VERBETERD: Grotere bulk wegschrijven naar de geluiduitgangs controller, DolABF, om het "TH-THis" probleem op te lossen dat soms werd gehoord bij de eerste klinker van een zin.
+
+        VERANDERD: DolABF versie 1.04 uitgebracht. Nieuwe Dolmix versie (Beta?) 1.03 uitgebracht.
+
+        VERBETERD: Timing van sfx verbeterd.
+
+        VERANDERD: Geluidsniveau van Orpheus verhoogd (met een factor 2.4) door middel van klemmen in plaats van rondgaan. Geeft een vervorming in plaats van klikken indien een sample het korte integer bereik overschrijdt.
+
+        VERANDERD: Het gebruik van het Grammaticale (operator) proces verbeterd.
+
+        VERBETERD: Vastlopen of langzaam lezen van Orpheus terwijl geen spraak niet is ingeschakeld (b.v. lezen van de installatie licentie overeenkomst). Orpheus stelde niet altijd de hoeveelheid stilte in die na een zin moest worden aangehouden om van element naar element te gaan.
+                   Deze staat nu op 20ms stilte.
+
+        VERANDERD: Snelheidsverbetering aan filters en synthesis machine. Orpheus neemt 12s cpu om te spreken en 88s spraak bij een 200MHz Pentium II, dit is ongeveer 7.3* werkelijke tijd oftewel neemt ~13% cpu gebruik.
+
+        VERBETERD: Forceren van reset van de stemgeving generator bij terugkeer van een volledige stemloze status.
+
+        VERANDERD: Het mengen van het glottale gebied functie bij stemloze spraak met de in de tijd varierende stemhebbende component, zoals bij de originele specificatie van de paralelle formant synthesizer bepaald, geimplementeerd.
+
+        VERBETERD: DOLABF accepteerde een index markering zelfs als de gegevens werden geweigerd (buffers vol) waardoor tijdelijk de indexering fout ging.
+
+        1.03 uitgebracht  5/01/99
+
+
+        Versie 1.04
+        ===========
+
+        VERBETERD: Correctie bij netwerk operaties.
+
+        VERBETERD: Verkeerd gebruik register sleutel. Kon vastlopen indien reeds geschoond.
+
+        1.04 uitgebracht 20/04/99
+
+
+        Versie 1.05
+        ===========
+
+        NIEUW: Vertaalbaar Instellingen paneel.
+
+        VERBETERD: Probleem in de Timer instelling en gebruik bij Orpheus en de SAM stuurprogramma's.
+
+        VERBETERD: Veiligheids controle modificatie toegevoegd aan DolMix
+                   om mogelijk vastlopen tegen te gaan bij gebruik van
+                   "gewone" niet-PnP geluidskaart stuurprogramma's.
+
+        VERBETERD: Balans instelling links/rechts in DolABF.
+
+        NIEUW: Dit historie bestand toegevoegd.
+
+	VERBETERD: Door foutieve werking van WM_ENDSESSION boodschap werd de mixer afgesloten ondanks dat het afsluiten werd geannuleerd.
+
+	VERBETERD: Mixer opstart en herstart code. Als de mixer een eenheid niet de eerste keer opende, werd op 11kHz geopend bij het opnieuw proberen te openen, waarbij diverse problemen optraden. Init_Intercept() opnieuw geprogrammeerd om de koppel-instalatie te scheiden van de toegewezen wave-kanalen en te verzekeren dat hetzelfde proces wordt gebruikt bij iedere poging om te starten.
+
+	VERANDERD: De wraparound test verwijderd vooraf gaand aan het sturen van mixer samples; Ze worden door 2 gedeeld en dit is dus niet nodig.
+
+	VERBETERD: Problemen in DolABF, als het geluidsstuurprogramma een   "event" processing time-out gaf hetgeen resulteerde in een stille maar nog werkende Orpheus, of een systeem hang situatie. DolABF definitie verbeterd, met slechts 1 thread, gebruikmakend van een callback functie in plaats van de event processing; simpeler en efficiënter. (Een verbeterde originele  versie is bewaard, bijvoorbeeld voor de Technische ondersteuning).
+
+	VERBETERD: Probleem in Orpheus stond toe dat orpheus een demo taalbestand dat was voorzien van een andere naam las.
+
+	VERBETERD: Tegengaan van het 2 maal starten van orpheus.
+
+	VERBETERD: Kleine verbeteringen om protesten van de grenscontrole te stoppen. Zodanig gecodeerd dat een fout de mixer start zodat niet de ongeldige handel wordt verwijderd. Ook bij het laden van code om de prompt te laden van de GetPrivateProfileString call voor niet gebruikte prompts (null prompt) lijst entries.
+
+	VERBETERD: Selectie van niet gestreste verkortings factoren voor woord-mediaal en finaal-vocalen verbeterd - waren omgewisseld.
+
+	VERANDERD: Diverse snelheidsverbeteringen, zoals DOLABF 3 maal sneller, TTS_Open call doet minder. Snelheidsverbetering in de synthesizer en symbool regel vergelijking.
+
+	VERBETERD: Probleem in hypermode, bijvoegelijk naamwoorden werden verwijderd! Niemand is het echter opgevallen!
+
+	MIEUW:	Werk begonnen om het Win 2000 en 98 SE stotter probleem op te lossen. Een nieuwe optie geven in het regelpaneel om te kunnen kiezen tussen Herstellen of een Herstelle, afsluiten, openen cyclus bij stoppen van spraak. Het laatste is stiller en geeft het stotter probleem niet, maar is trager. Er is ook een risco dat een heropenen niet werkt, daarvoor is een herstel mogelijkheid toegevoegd.
+
+	
+
+
