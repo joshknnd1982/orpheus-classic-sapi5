@@ -1,7 +1,0 @@
-build
-build_x64
-build_x86
-build_asan
-output
-test_wavs
-__pycache__
