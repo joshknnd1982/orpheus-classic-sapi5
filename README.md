@@ -101,5 +101,8 @@ utterance, which is what makes configuration changes take effect immediately.
 
 ## License
 
-The SAPI5 wrapper is open source software. The Orpheus Classic engine and
-its language data remain the property of their respective owners.
+The SAPI5 wrapper is licensed under the MIT License - see [LICENSE](LICENSE). The
+Orpheus Classic engine and its language data remain the property of their
+respective owners. They, the NVDA add-on files in `bin/` and a few source files
+taken from other projects are not covered by that licence; see
+[NOTICE.md](NOTICE.md).
